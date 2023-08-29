@@ -12,9 +12,10 @@
 
 5.  git commit - m  메세지 - 해당 메시지와 함께 위의 파일들을 로컬저장소에 커밋
 
-6. git push origin master - 원격저장소의 master 브랜치에 소스 보내기
-
-7. git hub 띄어쓰기 안될 시 맨뒤에 space바 두번
+6. git push origin 브랜치명 - 원격저장소의 master 브랜치에 소스 보내기
+  -반대로 원격 저장소의 수정한 내용을 가져올 경우
+   git pull origin 브랜치명 
+8. git hub 띄어쓰기 안될 시 맨뒤에 space바 두번
 
 처음에 한번만 이메일과 유저명 확인
 
