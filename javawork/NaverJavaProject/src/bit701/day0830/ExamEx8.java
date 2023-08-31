@@ -13,7 +13,8 @@ public class ExamEx8 {
 		
 		int man = money/10000;
 		int chun = (money%10000)/1000;
-		int baek = (money%1000)/100;
+		int obaek = (money%1000)/500;
+		int baek = (money%1000)/100 - (money%1000)/500*5 ;
 		int sip = (money%100)/10;
 		int il = (money%10)/1;
 		
@@ -23,6 +24,7 @@ public class ExamEx8 {
 		System.out.println("백원 짜리" + baek + "개입니다.");
 		System.out.println("십원 짜리" + sip + "개입니다.");
 		System.out.println("일원 짜리" + il + "개입니다.");
+		System.out.println("오백원 짜리" + obaek + "개입니다.");
 	}
 
 }
