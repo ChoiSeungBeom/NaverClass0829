@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gowun+Dodum&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=PT+Serif:wght@700&family=Tulpen+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body *{/*body의 모든 하위태그*/
+            font-size: 30px;
+            font-family: 'Jua';
+        }
+    </style>
+</head>
+<body>
+    <h1>반복문 for 연습</h1>
+    <script>
+        for(let i=1;i<=5;i++){
+            //&nbsp; 1칸
+            document.write(`<b>${i}</b>&nbsp&nbsp&nbsp</b>`);
+        }
+    </script>
+    <h1>mycar의 짝수번지 이미지만 출력하기(width=150)</h1>
+    <script>
+        
+        for(let i=1; i<=10;i++)
+        {
+            if(i%2==0){
+                imgTag=`<img alt="자동차" src="../mycar/mycar${i}.png" width=150 border="2" hspace="10">`;
+                document.write(imgTag);
+            }
+        }
+        
+    </script>
+</body>
+</html>

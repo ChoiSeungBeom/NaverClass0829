@@ -9,6 +9,8 @@ public class Ex5_BreakContinue {
 			}
 			System.out.printf("%3d",a);
 		}
+		
+
 		System.out.println();
 		System.out.println("===".repeat(30));
 		for(int a=1; a<=10; a++) {
@@ -17,7 +19,7 @@ public class Ex5_BreakContinue {
 			}
 			System.out.printf("%3d",a);
 		}
-		
+
 		System.out.println();
 		System.out.println("===".repeat(30));
 		//다중 for문일 경우 한꺼번에 2개의 반복문을 빠져나가고자 할경우

@@ -19,7 +19,7 @@ public class Ex7_ForExam {
 		}
 		
 		for(int dan=start;dan<=end;dan++) {
-			System.out.printf("%7d단",dan);
+			System.out.printf("%7d단 ",dan);
 		}
 		System.out.println("\n");
 		//////////////////////////구구단 시작/////////////////////

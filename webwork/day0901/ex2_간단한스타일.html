@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gowun+Dodum&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=PT+Serif:wght@700&family=Tulpen+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 문서 삽입형 스타일 적용 -->
+    <style>
+        /* style 영역에서의 주석처리 */
+        span{
+            font-family: 'Jua';
+        }
+
+        /* class : ., id:#  dm으로 스타일 적용*/
+        .one{ /* 태그 상관없이 class 명이 one 인경우 모두 적용 */
+            font-size: 35px;
+        }
+
+        div.one{/* div 태그의 one class에만 적용*/
+            color: brown;
+        }
+        /* class 가 two 인 모든 태그 그리고 span 태그중 class가 three인 태그 */
+        .two,span.three{
+            background-color: chartreuse;
+        }
+        /* div 태그중 클래스명이 one,three인 경우에만 border 적용 */
+        div.one,div.three{
+             border: 5px solid darkgreen; /* 굵기.선종류,색상 : 따로줘도되고 같이 줘도 된다. */
+        }
+        /* border 속성을 따로 주려고 할 경우 */
+        h1{
+            border-width: 50px;
+            border-style: double;
+            border-color: yellow;
+            border-radius: 20px; /*테두리선 둥글게 클수록 동글해짐*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 스타일정의 : 태그 삽입형 -->
+    <h1 style="color: brown;font-family:'Nanum Pen';background-color: rgb(236, 139, 139);">오늘 날씨가 좋아요!</h1>
+    <h1 style="color: rgb(201, 200, 209);background-color: rgb(104, 94, 200);font-family: 'Tulpen One';">have a good day</h1>   
+    <span class="one">Java</span>
+    <span class="two">Html</span>
+    <span class="three">JavaScript</span>
+    <hr>
+    <div class="one">소나타</div>
+    <div class="two">그랜저</div>
+    <div class="three">벤츠</div>
+    
+</body>
+</html>
