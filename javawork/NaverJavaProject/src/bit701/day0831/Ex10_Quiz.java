@@ -4,7 +4,6 @@ public class Ex10_Quiz {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		Scanner sc1 = new Scanner(System.in);
 		System.out.print("상품명을 입력하세요 : ");
 		String prod = sc.nextLine();
 		int s = 10;
@@ -21,7 +20,7 @@ public class Ex10_Quiz {
 			case "Strawberry":
 				System.out.printf("선택하신 제품은 딸기입니다. ");
 				System.out.println("수량을 입력해주세요 : ");
-				int proNum1 = sc1.nextInt();
+				int proNum1 = sc.nextInt();
 				if(proNum1 >=5) {
 					int result =(int)((priceS*proNum1)*0.9);
 					System.out.println("내야 될 값은 총"+ result +"원입니다.");
@@ -38,7 +37,7 @@ public class Ex10_Quiz {
 			case "Pineapple":
 				System.out.printf("선택하신 제품은 파인애플입니다. ");
 				System.out.println("수량을 입력해주세요 : ");
-				int proNum2 = sc1.nextInt();
+				int proNum2 = sc.nextInt();
 				if(proNum2 >=5) {
 					int result =(int)((priceP*proNum2)*0.9);
 					System.out.println("내야 될 값은 총"+result +"원입니다.");
@@ -54,7 +53,7 @@ public class Ex10_Quiz {
 			case "Apple":
 				System.out.printf("선택하신 제품은 사과입니다. ");
 				System.out.println("수량을 입력해주세요 : ");
-				int proNum3 = sc1.nextInt();
+				int proNum3 = sc.nextInt();
 				if(proNum3 >=5) {
 					int result =(int)((priceP*proNum3)*0.9);
 					System.out.println("내야 될 값은 총"+result +"원입니다.");
