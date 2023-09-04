@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+      div#msg{
+          font-family: 'Gamja Flower';
+          font-size: 30px;
+          margin-top: 30px;
+          color: palevioletred;
+      }
+      figure.b>img{
+            width: 130px;
+            border : 7px groove hotpink;
+            box-shadow: 5px 5px 5px gray;/* x,y,blure,color */
+        }
+
+        figure.b figcaption{
+            text-align: center;/*글자 가운데 정렬*/
+        }
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+   <input type="button" value="새로운 난수 발생하기" id="btncom">
+   <input type="text" id="textmsg">
+   <input type="button" value="ok" id="btnuser">
+   <div id="msg">Message 출력되는곳</div>
+  
+  <script>
+     let rnd;//난수를 구할 변수
+     //난수버튼 이벤트
+     document.getElementById("btncom").onclick=function(){
+        //1~100 사이의 난수구하기
+        rnd=parseInt((Math.random()*100))+1;
+        //console 에 출력
+        console.log(rnd);
+     }
+     
+     
+     let t=document.getElementById("textmsg");
+     let b=document.getElementById("btnuser");
+     let msg=document.getElementById("msg");
+     
+     b.onclick = function(){
+      let data=t.value;
+      if(data<rnd){
+      msg.innerHTML="<br><u>"+data+"보다 큽니다.</u>"
+      t.value="";
+      t.focus();
+      }
+      else if(data>rnd){
+      msg.innerHTML="<br><u>"+data+"보다 작습니다.</u>"
+      t.value="";
+      t.focus();
+      }
+      else{
+         msg.innerHTML="<br><u>"+data+" 정답입니다.</u>"
+      t.value="";
+      t.focus();
+      
+      document.write(`<img src="../mycar/mycar1.png">`);
+      
+      }
+   }
+  </script>
+  
+
+</body>
+</html>
