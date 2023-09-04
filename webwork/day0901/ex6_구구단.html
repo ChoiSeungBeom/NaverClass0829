@@ -5,26 +5,48 @@
         wght@700&family=Tulpen+One&display=swap" rel="stylesheet"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>구구단</title>
+    <style>
+        h3.title{
+            color: blueviolet;
+            background-color: aquamarine;
+            width : 300px;
+            margin-left: 150px;/*태그 안쪽 여백*/
+        }
+
+        h4.style{
+            color : white;
+            background-color: black;
+            border-style: solid;
+            font-family: 'Comic Sans MS';
+             margin-left: 100px; /*태그 바깥쪽 여백*/
+
+        }
+
+    </style>
 </head>
 <body>
-    <script>
-            let dan = prompt("2~9숫자를 입력하세요"); // prompt 숫자 입력받기
-            
-            if(dan>=2||dan<=9){
+           <h2>구구단 입력받아 출력하기</h2>
 
-                for(let i=1;i<=9;i++){
-                    i+=i;
-                    let mul = dan*i;
+           <script>
+                let dan = prompt("출력할 구구단을 입력하세요.")
+                console.log(typeof(dan)); // dan의 타입을 콘솔로 보여줌(LiveServer 검사)
+                if(dan<2|| dan >9){
+                    document.write("<img alt='사진' src='../mycar/mycar7.png' width=200>")
+
                 }
-                document.write("구구단 출력값")
-                document.write(mul);
-            }
-            else{
-                imgTag=`<img alt="자동차" src="../mycar/mycar${dan}.png>`;
-                document.write(imgTag);
-            }
-    </script>
+                else{
+                    let s="<h3 class='title'> ** " + dan + "단 **</h3><br>"; // br태그 --> 줄바꿈
+                    for(let i=1;i<=9;i++){
+                         s+=`<h4 class='style'>${dan} x ${i} = ${dan*i}</h4>`
+                        // s+=`<br>${dan} x ${i} = ${dan*i}</br>`
+
+                    }
+                document.write(s);
+                
+                }
+           </script>
+    
     
     <!-- 
         구구단 숫자 2~9까지 입력을 받아서 해당 구구단을 출력하시오
