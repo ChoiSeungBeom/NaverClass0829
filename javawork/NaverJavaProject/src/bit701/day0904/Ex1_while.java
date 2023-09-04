@@ -1,6 +1,6 @@
 package bit701.day0904;
 
-public class ex1_while {
+public class Ex1_while {
 
 	public static void main(String[] args) {
 		/*
