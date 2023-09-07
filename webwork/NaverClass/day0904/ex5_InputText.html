@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gowun+Dodum&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=PT+Serif:wght@700&family=Tulpen+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#msg{
+            font-family: 'Gamja Flower';
+            font-size: 30px;
+            margin-top: 30px;
+            color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="txtmsg">
+    <input type="button" id="btn1" value="읽기">
+    <div id="msg">Message 출력되는곳</div>
+    <script>
+        let t = document.getElementById("txtmsg");
+        let b = document.getElementById("btn1");
+        let m = document.getElementById("msg");
+
+        //버튼 이벤트 --> 버튼 클릭시 해당 함수 호출
+        b.onclick=function(){
+            // 1. 입력한 문자열 가져온다.
+            let data = t.value;
+            // 2. msg에 출력한다.
+            // msg.innerText="<u>"+data+"</u>"; // innerText는 태그도 그대로 출력
+            // msg.innerHTML="<u>"+data+"</u>"; // 태그 적용시키려면 innerHTML
+
+
+            msg.innerHTML+="<br><u>"+data+"</u>"; //+= : 기존 데이터에 추가로 출력(데이터 저장)
+
+            // 3. 입력한 값을 지운 후 포커스를 준다.
+            t.value="";
+            t.focus(); // 입력이 끝난 뒤 텍스트 입력창에 커서위치
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gowun+Dodum&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=PT+Serif:wght@700&family=Tulpen+One&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #photo{
+            border: 10px groove gold;
+        }
+        #btnplus {
+            font-size: 30px;
+            font-family: 'Jua';
+            text-align: center;
+            line-height: 40px;
+            color: brown;
+            background-color: aquamarine;
+            position: absolute;
+            left: 30px;
+            top: 40px;
+            height: 40px;
+        }
+
+        #btnminus {
+            font-size: 30px;
+            font-family: 'Jua';
+            text-align: center;
+            line-height: 40px;
+            color: brown;
+            background-color: aquamarine;
+            position: absolute;
+            left: 70px;
+            top: 40px;
+            height: 40px;
+        }
+
+        #btnImg {
+            font-size: 30px;
+            font-family: 'Jua';
+            text-align: center;
+            line-height: 40px;
+            color: brown;
+            background-color: rgb(228, 201, 205);
+            position: absolute;
+            left: 30px;
+            top: 90px;
+            height: 40px;
+        }
+
+        #message {
+            font-family: 'Jua';
+            text-align: center;
+            line-height: 400px;
+            color: brown;
+            background-color: rgb(228, 201, 205);
+            position: absolute;
+            left: 30px;
+            top: 90px;
+            height: 40px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message" style="font-size: 30px;">Hello</div>
+    <input type="button" value="사진변경" id="btnImg">
+    <input type="button" value="+" id="btnplus">
+    <input type="button" value="-" id="btnminus">
+    <script>
+        document.getElementById("btnImg").onclick = function () {
+            let rnd;
+            let img;
+            let idx=parseInt(Math.random()*20)+1;
+            //이미지 요소값을 얻는다.
+            
+            let photo = document.getElementById("photo");
+            photo.setAttribute("src",`../IMG/연예인사진/${idx}.jpg`);
+
+
+        }
+        document.getElementById("btnplus").onclick = function () {
+            let m = document.getElementById("message")
+            let fs = parseInt(m.style.fontSize, 10);
+            if (fs < 600) {
+                fs += 3;
+            }
+
+        }
+        document.getElementById("btnminus").onclick = function () {
+            let m = document.getElementById("message")
+            let fs = parseInt(m.style.fontSize, 10);
+            if (fs > 50) {
+                fs -= 3;
+            }
+            m.style.fontSize = fs + "px";
+        }
+    </script>
+
+    <!-- 3개의 버튼, 점점작게, 점점크게, 랜덤
+    점점작게 : 사진이 5px씩 줄어듬(50px까지)
+    점점크게 : 사진이 5px씩 커짐(최고 600px까지)
+    랜덤: 1~20 사이 난수를 구한 후 해당 사진으로 변경하기
+
+    -->
+    
+     <img src="../IMG/연예인사진/12.jpg" style="width:300px;" id="photo">
+</body>
+
+</html>

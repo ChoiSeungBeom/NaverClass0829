@@ -9,7 +9,7 @@ public class Ex10_ArrayRankInput {
 		int []rank = new int[4];
 		String []names = new String[4];
 		Scanner sc = new Scanner(System.in);
-
+		
 
 
 		//입력
