@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+<<<<<<< HEAD:webwork/NaverClass/day0904/ex4_setinterval.html
         window.onload=function(){
             let car1=document.getElementById("car1");
 
@@ -21,6 +22,23 @@
     </script>
 </head>
 
+=======
+       window.onload=function(){
+        let car1=document.getElementById("car1");
+
+        //1초마다 주기적으로 호출되는 함수 정의
+        let idx=2;
+
+            setInterval(function(){
+                car1.setAttribute("src",`../mycar/mycar${idx}.png`);
+                idx++;
+                if(idx>15)
+                    idx=1;
+            },1000);
+        }
+    </script>
+</head>
+>>>>>>> edaf8161aba6c2cafa9ff64baf540f42ba9bc70f:webwork/day0904/ex4_setinterval.html
 <body>
     <img id="car1" src="../mycar/mycar1.png" width="300">
 </body>
