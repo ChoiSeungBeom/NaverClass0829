@@ -4,10 +4,10 @@ public class Ex1_Array {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("배열 복습 예제111");
+		System.out.println("배열 복습 예제111222");
 		System.out.println("dsdsadd");
 		System.out.println("dsdsadd");
-		System.out.println("dsafsajgkag");
+		System.out.println("dsafsajgka11g");
 	}
 
 }
