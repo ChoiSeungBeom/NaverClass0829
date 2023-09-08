@@ -112,6 +112,7 @@
             //div.lotto 에 출력
             //div.lotto 여러개의 요소값을 배열형태로 얻어보자
             // querySelectorAll 배열로 모두 가져온다. querySelector (x)
+            //요소값을 한번에 얻을라면 배열을 사용하는 수 밖에 없다.
             let div_lotto=document.querySelectorAll("div.lotto");
             for(let i=0;i<div_lotto.length;i++){
                 div_lotto[i].innerHTML=lotto_array[i];
@@ -161,5 +162,4 @@
         <button type="button" id="btngo">로또 숫자 구하기</button>
     </div>
 </body>
-
 </html>
