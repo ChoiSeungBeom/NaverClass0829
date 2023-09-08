@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gowun+Dodum&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=PT+Serif:wght@700&family=Tulpen+One&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        span {
+            font-size: 40px;
+            position: relative;
+            margin-top: 0px;
+            color: rgb(161, 49, 221);
+            
+        }
+        div.container{
+            border: 1px solid black;
+            width:850px;
+            height: 180px;
+            display: flex;
+            border-radius: 100px;
+            margin-left: 130px;
+            margin-top: 80px;
+            background-color: aliceblue
+            ;
+        }
+         #time{
+            font-size: 25px;
+            font-family: 'Comic Sans MS';
+            color: rgba(106, 68, 68, 0.283);
+            position: absolute;
+            left:410px;
+            top:20px;
+            width:300px;
+            height: 50px;
+            font-weight: bold;
+            
+
+            text-align: center;
+            line-height: 30px;/*한줄일경우 행높이를 height 하고 같은 값을 주면 세로방향 가운데온다*/
+        }
+        div.count{
+            font-family: 'Jua';
+            font-size: 30px;
+            color:rgb(17, 9, 231);
+            position: relative;
+            margin-left: 370px;
+            width: 450px;
+            
+            
+        }
+
+        div.box {
+            float: left;
+            width: 100px;
+            height: 100px;
+            
+            border-radius: 100px;
+            margin-right: 30px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 45px;
+            position: relative;
+            top: 40px;
+            left: 40px;
+            font-family: 'Jua';
+        }
+
+        #btnrnd{
+            font-family: 'Jua';
+            position: absolute;
+            margin-left: 34%;
+            margin-top: 10%;
+            padding: 10px 60px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: aquamarine;
+            border: 3px solid rgb(0, 0, 0);
+
+        }
+        #box1{
+            background-color: rgb(232, 145, 174);
+        }
+        #box2{
+            background-color: orange;
+            color: aliceblue;
+        }
+        #box3{
+            background-color: rgb(217, 150, 173);
+        }
+        #box4{
+            background-color: rgba(203, 148, 96, 0.8);
+            color: aliceblue;
+        }
+        #box5{
+            background-color: purple;
+            color: yellow;
+        }
+        #box6{
+            background-color: rgb(237, 187, 204);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            let box = document.querySelectorAll("div.box");
+            console.log(box.length);
+            for (let i = 0; i < box.length; i++) {
+                box[i].innerHTML = parseInt(Math.random() * 45) + 1;
+            }
+        };
+
+    </script>
+</head>
+
+<body>
+    
+
+    <div class="count">
+        1026<span>회</span> 
+    </div>
+
+    <!-- 1. date 클래스로 현재 날짜 받기 -->
+    
+    <div class="container">
+    <br><br>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    <div class="box" id="box6"></div>
+    </div>
+    
+    <!-- 버튼 선언 -->
+    <input type="button" value="로또 숫자 구하기" id="btnrnd">
+
+    <!--  버튼 클릭  -->
+    <script>
+        let t = document.getElementById("count");
+        document.getElementById("btnrnd").onclick = function () {
+            // alert("새로운 난수를 생성합니다.")
+            //여러개의 class 요소들을 배열변수로 얻는다
+
+            let box = document.querySelectorAll("div.box");
+            console.log(box.length);
+            for (let i = 0; i < box.length; i++) {
+                box[i].innerHTML = parseInt(Math.random() * 45) + 1;
+                for (let j = 0; j < i; j++) {
+                    if(box[i].innerHTML==box[j].innerHTML){
+                        i--;
+                        continue;
+                    }
+                }
+
+            }
+        };
+        window.onload=function(){
+            //처음 시작시 init_time 함수 호출
+            init_time();
+            //1초마다 반복 호출
+            setInterval(function(){
+                init_time();
+            },1000);
+        }
+        //일반 사용자 함수 
+        function init_time()
+        {
+           // alert("호출?");
+           //현재 날짜와 시간을 얻어서 출력
+           let date=new Date();
+           let y=date.getFullYear();
+           let m=date.getMonth()+1;
+           let d=date.getDate();
+           
+
+           time.innerHTML=`${y}-${m}-${d}`;
+        }
+
+    </script>
+    <!-- 4. div스타일로 묶기 -->
+    <div id="time">
+        xxxx-xx-xx </div>
+
+    
+
+</body>
+
+</html>

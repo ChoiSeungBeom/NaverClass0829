@@ -6,32 +6,6 @@
     <title>Document</title>
     <script>
         window.onload=function(){
-<<<<<<< HEAD:webwork/NaverClass/day0904/ex3_settimeout.html
-            //     alert("안녕하세요"); // 실행할때 안녕하세요 문구뜸
-            // 사진의 요소값을 얻는다
-            let photo=document.getElementById("myphoto");
-            //사진의 src 속성을 변경한다
-            //photo.setAttribute("src","../연예인사진/15.jpg");
-
-            //3초 후 설현 사진으로 변경을 하고 싶을 경우
-            //3초 후 딱 한번 function 호출
-            setTimeout(function(){
-                photo.setAttribute("src","../연예인사진/15.jpg");
-            },3000);
-            
-            //5초 후 13번 연예인 사진으로 변경
-            setTimeout(function(){
-                photo.setAttribute("src","../연예인사진/13.jpg");
-            },5000);
-
-         }
-
-         
-        
-        // window.onunload=function(){
-        //     alert("안녕히 가세요");
-        // }
-=======
             //alert("안녕하세요");
 
             //사진의 요소값을 얻는다
@@ -42,19 +16,18 @@
             //3초후 설현 사진으로 변경을 하고싶을경우
             //3초후 딱 한번 function 이 호출된다
             setTimeout(function(){
-                photo.setAttribute("src","../연예인사진/15.jpg");
+                photo.setAttribute("src","../IMG/연예인사진/15.jpg");
             },3000);
 
             //5초후 다시 박보영 사진으로 변경
             setTimeout(function(){
-                photo.setAttribute("src","../연예인사진/12.jpg");
+                photo.setAttribute("src","../IMG/연예인사진/12.jpg");
             },5000);
         }
       
->>>>>>> edaf8161aba6c2cafa9ff64baf540f42ba9bc70f:webwork/day0904/ex3_settimeout.html
     </script>
 </head>
 <body>
-    <img src="../연예인사진/12.jpg" width="200" id="myphoto">
+    <img src="../IMG/연예인사진/12.jpg" width="200" id="myphoto">
 </body>
 </html>
