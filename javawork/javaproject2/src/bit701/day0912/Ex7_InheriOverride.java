@@ -19,7 +19,7 @@ class SubB extends SuperB{
 }
 
 /////////////////////////////////
-public class Ex7_InheiOverride {
+public class Ex7_InheriOverride {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
