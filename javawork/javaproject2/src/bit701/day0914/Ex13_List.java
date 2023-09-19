@@ -14,6 +14,7 @@ public class Ex13_List {
 		
 		Vector<String> list3 = new Vector<String>(2,2); //기본 3개 할당(2개씩 할당)
 		System.out.println("list3의 할당갯수"+list3.capacity());
+		System.out.println();
 		list3.add("red");
 		list3.add("green");
 		list3.add("blue");
