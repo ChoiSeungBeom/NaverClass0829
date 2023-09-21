@@ -1,0 +1,39 @@
+drop table bookstore;
+drop table book;
+create sequence seq_book nocache;
+
+create table bookstore(
+    user_id varchar(25)constraint user_pk_id primary key,
+    book_type varchar2(20),
+    book_id varchar2(25)
+);
+
+
+--기본키 변경 
+--ALTER TABLE bookstore ADD CONSTRAINT user_pk_id PRIMARY KEY(user_id);
+
+-- 컬럼 추가 제거
+--ALTER TABLE bookstore ADD user_id VARCHAR(25);
+--ALTER TABLE bookstore drop column book_name;
+
+
+create table book(
+    book_name varchar2(25),
+    book_price number(10),
+    book_id varchar2(25) constraint book_pk_id primary key,
+    book_publisher varchar2(25),
+    book_author varchar2(25)
+);
+
+ALTER TABLE book ADD CONSTRAINT book_fk_id FOREIGN KEY(book_id) REFERENCES bookstore(user_id);
+--name,price,id,publisher,author
+
+insert into bookstore values('213-777','소설','132-789');
+insert into bookstore values(seq_book.nextval,'소설','132-790');
+insert into bookstore values(seq_book.nextval,'장설',(seq_book.nextval+100));
+
+
+insert into book values('죽음',15000,'213-777','최승범','베르나르');
+insert into book values('살음',25000,'109','최승범','미간');
+
+

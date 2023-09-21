@@ -1,0 +1,19 @@
+CREATE TABLE databases (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE,
+    birthdate DATE
+);
+
+INSERT INTO databases (user_id,username, email, birthdate)
+VALUES
+    ('1','JohnDoe', 'john@example.com', '1990-05-15'),
+    ('2','JaneSmith', 'jane@example.com', '1985-08-22'),
+    ('3','BobJohnson', 'bob@example.com', '1992-03-10'),
+    ('4','AliceBrown', 'alice@example.com', '1988-12-05'),
+    ('5','EllaWilson', 'ella@example.com', '1995-06-30'),
+    ('6','DavidLee', 'david@example.com', '1983-04-18'),
+    ('7','GraceDavis', 'grace@example.com', '1998-09-08'),
+    ('8','MichaelClark', 'michael@example.com', '1991-07-14'),
+    ('9','SophiaMoore', 'sophia@example.com', '1987-02-25'),
+    ('10','LiamWhite', 'liam@example.com', '1994-11-03');

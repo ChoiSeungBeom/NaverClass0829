@@ -1,0 +1,88 @@
+--angel 연습
+--전체 시퀸스 조회
+select * from seq;
+--sequence 생성
+create SEQUENCE seq1 start with 1 INCREMENT by 1;--1부터 1씩 증가하는 시퀸스 생성
+create SEQUENCE seq2 start with 5 INCREMENT by 3 nocache; --5부터 3씩 증가, cache값은 0
+create SEQUENCE seq3 maxvalue 100 nocache;
+
+--값 발생시키기
+select seq1.nextval,seq2.nextval,seq3.nextval from dual;
+
+drop sequence seq1;
+drop sequence seq2;
+drop sequence seq3;
+
+--새로운 sequence 생성 
+create SEQUENCE seq_test nocache;
+drop table TEST
+--table생성
+
+create table test(
+num number(3) primary key, 
+name varchar2(20) not null, -- 값이 안들어오면 오류
+blood char(2) default 'A',
+weight number(5,2), -- 5자리중에 두자리만 주겠다
+birthday date);
+
+--데이터 추가
+--일부 데이터만 넣는 경우 column명을 반드시 표기한다
+insert into test (num,name) values  (seq_test.nextval,'캔디');
+
+--순서대로 모든 컬럼 값을 넣는 경우 컬럼명 생략 가능
+insert into test values(seq_test.nextval,'캐서린','AB',67.89,sysdate);
+
+
+--제약 조건에 안맞는 경우 오류 확인
+insert into test(num,blood) values (seq_test.nextval ,'O');
+insert into test(num,name,blood) values (2,'Lee' ,'O');
+
+--제대로된 데이터 3개만 추가하기
+insert into test values  (seq_test.nextval,'강호동','B',78.9,'2000-10-15');
+insert into test values  (seq_test.nextval,'유재석','A',73.9,'2001-10-15');
+insert into test values  (seq_test.nextval,'이영자','O',77.77,'1950-10-15');
+
+rollback; -- 마지막 커밋하기 전 데이터가 모두 살
+commit; --더 이상 롤백안됨
+insert into test values  (seq_test.nextval,'김말동','B',56.78,'2000-10-15');   
+rollback;
+
+create table person(
+ num number(3) constraint person_pk_num primary key,
+ blood char(2)
+);
+
+--기존 제약조건 제거
+alter table person drop constraint person_pk_num;
+
+
+--다시 primary key에 대한 제약조건 추가
+alter table person add constraint person_num_pk primary key(num);
+
+--blood에 대해서 check 제약조건 추가
+alter table person add constraint person_ck_blood check(blood in('A','B','O','AB'));
+
+--데이타 추가
+insert into person values (1,'A');
+insert into person values (1,'B');
+insert into person values (2,'b');
+insert into person values (2,'O');
+
+--컬럼을 추가
+alter table person add name varchar2(20);
+alter table person add score number(5,1) default 30.5;
+
+--컬럼명 제거
+alter table person drop column num;
+
+--java라는 컬럼을 number 타입으로 추가후 1-100 사이값만 들어오도록 제약조건도 추가
+alter table person add java number(3) default 0;
+alter table person add constraint person_ck_java check (java>=0 and java<=100);
+
+--컬럼명 변경 rename column
+alter table person rename column java to spring;
+
+--데이타 추가시 컬럼 순서대로 주기싫을경우 컬럼명 주면된다
+insert into person (name,blood,spring,score) values('lee','O',90,35);
+
+drop table PERSON
