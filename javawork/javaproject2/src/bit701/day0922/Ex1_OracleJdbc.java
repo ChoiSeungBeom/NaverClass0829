@@ -69,7 +69,7 @@ public class Ex1_OracleJdbc {
 		} catch (SQLException|NullPointerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
       }
       
    }

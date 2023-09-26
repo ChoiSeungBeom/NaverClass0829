@@ -1,0 +1,5 @@
+insert into shop values(seq_shop.nextval,'주름치마',35000,'black');
+
+select * from shop order by sang_no;
+
+UPDATE SHOP SET SANG_PRICE = PRICE, SANG_COLOR = COLOR WHERE SANG_NO;

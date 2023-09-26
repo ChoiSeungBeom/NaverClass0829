@@ -10,7 +10,7 @@ public class Ex3_MysqlGroupSawon {
 	static final String MYSQL_DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String MYSQL_URL = "jdbc:mysql://localhost:3306/bit701?serverTimezone=Asia/Seoul";
 	public Ex3_MysqlGroupSawon() {
-		// TODO Auto-generated constructor stub
+
 		try {
 			Class.forName(MYSQL_DRIVER);
 			System.out.println("Mysql 드라이버 성공");
@@ -23,7 +23,7 @@ public class Ex3_MysqlGroupSawon {
 	public void sawonBunseok() {
 		Connection conn = null;
 		Statement stmt = null; //
-		ResultSet rs = null;// select일때에만 필요 db로 부터 데이터 가져올때 필요\
+		ResultSet rs = null;// select일때에만 필요 db로 부터 데이터 가져올때 필요
 		String sql="select buseo,count(*) count,max(score) maxscore,min(score) minscore,avg(score) avgscore from sawon group by buseo";
 		try {
 			conn = DriverManager.getConnection(MYSQL_URL, "root", "1234");
@@ -47,10 +47,8 @@ public class Ex3_MysqlGroupSawon {
 				System.out.println(buseo+"\t"+count + "\t" + maxscore + "\t\t" + minscore + "\t\t" + avgscore);
 			}
 			
-			
 //			System.out.println("Mysql 연결 성공");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			System.out.println("Mysql 연결 실패:" + e.getMessage());
 		} finally {
 			try {
@@ -58,16 +56,13 @@ public class Ex3_MysqlGroupSawon {
 				stmt.close();
 				conn.close();
 			} catch (SQLException | NullPointerException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 	}		
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public static void main(String[] args) {
 		Ex3_MysqlGroupSawon ex=new Ex3_MysqlGroupSawon();
 		ex.sawonBunseok();
 	}
-
 }

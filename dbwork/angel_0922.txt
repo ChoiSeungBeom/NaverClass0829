@@ -64,6 +64,7 @@ commit;
 
 --예제3 : 상품명을 인자로 보내면 그 단어가 포함된 모든 상품들 출력하기
 create or replace PROCEDURE sangpum(sang varchar2)
+
 is
   Cursor s1
   is
