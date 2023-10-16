@@ -222,7 +222,29 @@ create table test(
 student_id int(20) not null primary key ,
 phone varchar(20) not null
 );
-
-select * from test;
+-- select * from student where name like '%강%'sawon;-- 
+select * from student;
 
 insert into test(phone) values('010-2702-4800');
+
+
+select * from sawon;
+
+select * from Sawon order by num desc;
+
+create table myshop (
+	num smallint auto_increment primary key,
+    sangpum varchar(30),
+    price int,
+    photo varchar(5),
+    color varchar(20),
+    writeday datetime 
+);
+
+select * from myshop;
+
+desc myshop;
+
+alter table myshop modify photo varchar(20);
+
+update myshop set price=3000 where num=1;
