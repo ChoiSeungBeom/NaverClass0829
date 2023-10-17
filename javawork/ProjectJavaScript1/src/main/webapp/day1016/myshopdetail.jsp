@@ -15,7 +15,9 @@
    <style>
    
    body * {
+   
         font-family: 'Jua';
+        
    }
     
    </style>
@@ -43,6 +45,7 @@
       가   격 : <%=dto.getPrice()%>원
       <br><br>
       등록일 : <%=sdf.format(dto.getWriteday()) %>
+      
    </div>
    <div class="buttons">
       <button type="button" class="btn btn-outline-secondary"

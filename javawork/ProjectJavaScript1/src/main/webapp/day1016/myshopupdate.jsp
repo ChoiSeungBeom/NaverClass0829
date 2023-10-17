@@ -25,11 +25,11 @@
 	dto.setPrice(price);
 	dto.setNum(num);
 	
-	//insert 메서드 호출(db저장)
-	dao.insertShop(dto);
+	//update 메서드 호출(db저장)
+	dao.updateShop(dto);
 
-	//목록 페이지로 이동(redirect)
-	response.sendRedirect("myshop.jsp");
+	//상세 페이지로 이동(redirect)
+	response.sendRedirect("myshopdetail.jsp?num="+num);
 	
 	
 %>

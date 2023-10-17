@@ -13,15 +13,18 @@
    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
       <style>
    	body * {
+   	
         font-family: 'Jua';
     }
     
     img.photo{
+    
     	position: absolute;
     	left:400px;
     	top:50px;
     	width:200px;
     	border: 5px groove orange;
+    	
     }
    </style>
 </head>

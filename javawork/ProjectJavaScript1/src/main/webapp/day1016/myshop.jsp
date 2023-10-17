@@ -21,18 +21,23 @@
     }
     
     .shoptb thead tr th {
+    
     	background-color: #ccf;
     	color: blue;
+    	
     }
     
     div.box{
+    
     	width: 60px;
     	height: 60px;
     	border: 1px solid black;
     	border-radius: 100px;
+    	
     }
     
     img.small{
+    
     	width: 50px;
     	height: 50px;
     	cursor: pointer;
@@ -118,14 +123,8 @@
 						let a=confirm("삭제하려면 [확인]을 눌러주세요");
 						if(a){
 							location.href="myshopdelete.jsp?num="+num;
-							
 						}
 					});
-					/* $(".del").click(function(){
-						let num=$(this).attr("num");
-						
-						
-					}); */
 					
 	</script>
 </body>	
