@@ -13,11 +13,15 @@
    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
       <style>
+      
    	body * {
+   	
         font-family: 'Jua';
+        
     }
     
     .uploadcamera{
+    
     	font-size: 25px;
     	cursor: pointer;
     	
@@ -25,21 +29,14 @@
     
    </style>
    <script type="text/javascript">
-   
-
-  
    	$(function(){
    		//카메라 이벤트
    		$(".uploadcamera").click(function(){
    			$("#upload").trigger("click"); //이벤트 강제 발생
    		});
-   		
-   		
-   		
+
    	 $("#upload").change(function(){
-
    	  console.log("1:"+$(this)[0].files.length);
-
    	  console.log("2:"+$(this)[0].files[0]);
 
    	  //정규표현식
@@ -108,7 +105,7 @@
 						style="width: 150px" autofocus="autofocus" required="required" value="<%=dto.getWriter()%>">
 					</td>
 				</tr>
-				
+								
 				<tr>
 					<th width="100">제목</th>
 					<td class="input-group">
@@ -135,7 +132,6 @@
 						<button type="button" class="btn btn-outline-success" style="width: 100px;" onclick="history.back()">이전</button>
 					</td>
 				</tr>
-		
 			</table>
 		</form>
 	</div>

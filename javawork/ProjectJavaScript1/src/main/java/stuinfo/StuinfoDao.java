@@ -1,5 +1,8 @@
 package stuinfo;
 
-public class StuinfoDao {
+import mysql.db.DbConnect;
 
+public class StuinfoDao {
+	DbConnect db = new DbConnect();
+	
 }
